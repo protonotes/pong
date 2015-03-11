@@ -58,16 +58,17 @@ function createBlocks() {
 }
 
 // Draw the game blocks
+
 function drawBlocks(x,y,type) {
     switch(type){
         case 1:
-            ctx.fillStyle = 'blue';
+            ctx.fillStyle = '#004D85';
             break;
         case 2:
-            ctx.fillStyle = 'orange';
+            ctx.fillStyle = '#0071C2';
             break
         case 3: 
-            ctx.fillStyle = 'gray';
+            ctx.fillStyle = '#6FC2FC';
             break;
         default:
             ctx.clearRect(x*block.width, y*block.height, block.width, block.height);
@@ -79,7 +80,7 @@ function drawBlocks(x,y,type) {
     if (type){
         ctx.fillRect(x*block.width, y*block.height, block.width, block.height);
         ctx.strokeRect(x*block.width+1, y*block.height+1, block.width-2, block.height-2)
-
+        ctx.strokeStyle = "#7B9DB5"
     }
 }
 
@@ -246,4 +247,18 @@ function gameOver() {
     clearInterval(gameLoop);
     ctx.fillText('Game Over', canvas.width/2,canvas.height/2);
 }
-gameStart();
+
+// Draw the board
+createBlocks();
+displayScore();
+drawPaddle();
+drawBall();
+
+$('#start').click(function() {
+    gameStart();
+});
+
+$('#stop').click(function() {
+    ball.deltaX = 0;
+    ball.deltaY = 0;
+})

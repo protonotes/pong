@@ -1,6 +1,6 @@
 requirejs.config({
-    //By default load any module IDs from js/lib
-    baseUrl: 'scripts/lib',
+    //By default load any module IDs from scripts
+    baseUrl: 'scripts',
     //except, if the module ID starts with "app",
     //load it from the js/app directory. paths
     //config is relative to the baseUrl, and
@@ -8,13 +8,15 @@ requirejs.config({
     //the paths config could be for a directory.
     paths: {
         jquery: 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min',
-        game: 'game'
+        game: 'lib/game',
+        domReady: 'lib/domReady',
+        bootstrap: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min'
     }
 });
 
 // Start the main app logic.
-requirejs(['jquery', 'domReady', 'game'],
-function   ($, domReady, game) {
+requirejs(['jquery', 'domReady', 'game', 'bootstrap'],
+function   ($, domReady, game, bootstrap) {
     //jQuery, canvas and the app/sub module are all
     //loaded and can be used here now.
 });

@@ -10,13 +10,14 @@ requirejs.config({
         jquery: 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min',
         game: 'lib/game',
         domReady: 'lib/domReady',
-        bootstrap: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min'
+        bootstrap: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min',
+        underscore: 'lib/underscore'
     }
 });
 
 // Start the main app logic.
-requirejs(['jquery', 'domReady', 'game', 'bootstrap'],
-function   ($, domReady, game, bootstrap) {
+requirejs(['jquery', 'domReady', 'game', 'bootstrap', 'underscore'],
+function   ($, domReady, game, bootstrap, underscore) {
     //jQuery, canvas and the app/sub module are all
     //loaded and can be used here now.
 });

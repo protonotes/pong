@@ -28,7 +28,8 @@ var paddle = {
 var block = {
     width: 75,
     height: 25,
-    rows: 10
+    rows: 5,
+    cols: 10
 }
 
 // Create block matrix
@@ -38,6 +39,20 @@ var blocks = [
     [1,2,1,1,0,3,1,1,2,0],
     [2,1,2,1,2,1,0,1,3,1]
 ];
+
+// Block generator
+// function matrix(ary) {
+//     for (var i = 0; i < block.rows; i++) {
+//         for (var j = 0; j < block.cols; j++) {
+//             var blockType = Math.floor(Math.random() * 3);
+//             ary.push(blockType);
+//         }        
+//         blocks.push(ary);
+//     }
+// }
+
+// Populate blocks array
+// matrix([]);
 
 // Create the objects
 function drawPaddle() {
@@ -62,7 +77,11 @@ function createBlocks() {
 function drawBlocks(x,y,type) {
     switch(type){
         case 1:
-            ctx.fillStyle = '#004D85';
+            var block1 = new Image();
+            block1.src = 'images/brick1.jpg';
+            block1.onload = function() {                
+                ctx.drawImage(block1,0,0);                
+            }
             break;
         case 2:
             ctx.fillStyle = '#0071C2';

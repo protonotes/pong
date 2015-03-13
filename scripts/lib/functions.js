@@ -15,9 +15,12 @@ var blockType = {
 	three: 3
 }
 
-function blocksArea(blocks) {
-	var blanks = .10;
-	var one = .6;
+function fillArea(block) {
+	blanks = blocks.length * .1
+	ones = blocks.length * .6
+	twos = blocks.length * .2
+	threes = blocks.length * .1
+
 	for(var i=0; i < blocks.length; i++) {
         for(var j = 0; j < blocks[i].length; j++) {
             drawBlocks(j,i,blocks[i][j]);
